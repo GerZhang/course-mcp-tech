@@ -1,0 +1,12 @@
+// 1.客户端发送初始化请求
+{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{"roots":{"listChanged":true},"sampling":{},"elicitation":{}},"clientInfo":{"name":"warp terminal client","title":"warp terminal","version":"1.0.0"}}}
+
+// 2.客户端发送通知请求
+{"jsonrpc":"2.0","method":"notifications/initialized"}
+
+// 3.客户端发送工具发现请求
+{"jsonrpc":"2.0","id":1,"method":"tools/list"}
+
+// 4.客户端发送工具调用请求
+{"jsonrpc":"2.0","id":2,"method":"tools/call","params":{"name":"sum","arguments":{"a":2,"b":3}}}
+

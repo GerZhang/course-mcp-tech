@@ -1,0 +1,5 @@
+// 调用 sum 方法的请求体
+{"jsonrpc":"2.0","method":"sum","params":{"a":2,"b":3},"id":1}
+
+// 调用 createFile 方法的请求体
+{"jsonrpc":"2.0","method":"createFile","params":{"filename":"/Users/gerald/Desktop/mcp.txt","content":"hello mcp~"},"id":2}
