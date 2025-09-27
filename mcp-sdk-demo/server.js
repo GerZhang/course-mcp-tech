@@ -1,4 +1,4 @@
-import { McpServer} from "@modelcontextprotocol/sdk/server/mcp.js";
+import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
 
@@ -31,7 +31,7 @@ server.registerTool("createFile",
     title: '创建文件',
     description: '创建一个文本文件',
     inputSchema: {
-      filename: z.string().describe('文件名（如：note.txt）'),
+      filename: z.string().describe('包含路径的文件名（如：/path/to/note.txt）'),
       content: z.string().describe('文件内容')
     }
   },
@@ -57,10 +57,10 @@ server.registerTool("createFile",
 async function startServer() {
   // 创建 stdio 传输层，正确传入 stdin 和 stdout
   const transport = new StdioServerTransport();
-  
+
   // 连接服务器和传输层
   await server.connect(transport);
-  
+
   console.error("MCP SDK 服务器已启动，等待客户端连接...");
 }
 
